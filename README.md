@@ -1,4 +1,4 @@
-![Banner](https://github.com/user-attachments/assets/8c1d7ea3-a10e-46c0-b9a7-ca10b2417dcc)
+![Banner](https://github.com/user-attachments/assets/02114f26-516b-4f1c-8882-ce544637d095)
 Sistema Solicita Senac
 Um sistema para facilitar a comunicação entre o solicitante, sede e o executor
 ![Static Badge](https://img.shields.io/badge/SSS-blue)
@@ -20,6 +20,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Expo](https://github.com/)
 - [Modelagem do software UML]()
-- [React](https://code.visualstudio.com/)
+- [VisualStudio](https://code.visualstudio.com/)
 - [HTML/CSS/JavaScript/bootstrap]()
 - [Pyton/Flask/Postgree]()
