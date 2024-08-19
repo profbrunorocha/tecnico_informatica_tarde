@@ -1,4 +1,5 @@
 ![Banner](https://github.com/user-attachments/assets/02114f26-516b-4f1c-8882-ce544637d095)
+
 Sistema Solicita Senac
 Um sistema para facilitar a comunicação entre o solicitante, sede e o executor
 ![Static Badge](https://img.shields.io/badge/SSS-blue)
