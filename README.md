@@ -1,7 +1,6 @@
 ![Banner](https://github.com/user-attachments/assets/02114f26-516b-4f1c-8882-ce544637d095)
 
-Sistema Solicita Senac
-Um sistema para facilitar a comunicação entre o solicitante, sede e o executor
+Solicita Serviços Senac - Uma ferramenta para gerenciar a solicitação de serviços relacionados a limpeza, asseio e conservação.
 ![Static Badge](https://img.shields.io/badge/SSS-blue)
 
 <h4 align="center"> 
@@ -24,3 +23,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [VisualStudio](https://code.visualstudio.com/)
 - [HTML/CSS/JavaScript/bootstrap]()
 - [Pyton/Flask/Postgree]()
+- [Adobe Illustrator]()
+- [Miro](https://miro.com/pt/)
+- [Draw](https://app.diagrams.net/)
