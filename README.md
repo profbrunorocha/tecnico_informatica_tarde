@@ -8,21 +8,17 @@ Solicita Serviços Senac - Uma ferramenta para gerenciar a solicitação de serv
 </h4>
 ### Features
 
-- [x] Cadastro de usuário
-- [x] Cadastro de Funcionário
-- [x] Solicitar Serviço
-- [x] Criar relatório
-- [x] Consultar relatório
+- [x] Cadastro de usuários, funcionários, categoria de serviços e setores
+- [x] Solicitação/Consulta/Confirmação/Execução/Visualização de serviços
+- [x] Emissão de relatórios
 
 ### 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Expo](https://github.com/)
-- [Modelagem do software UML]()
-- [VisualStudio](https://code.visualstudio.com/)
+- [VSCode](https://code.visualstudio.com/)
 - [HTML/CSS/JavaScript/bootstrap]()
-- [Pyton/Flask/Postgree]()
-- [Adobe Illustrator]()
-- [Miro](https://miro.com/pt/)
-- [Draw](https://app.diagrams.net/)
+- [Python/Flask/PostgreeSQL]()
+- [AdobeIllustrator]()
+- [Miro - Diagramas E-R](https://miro.com/pt/)
+- [Draw - Diagramas UML](https://app.diagrams.net/)
