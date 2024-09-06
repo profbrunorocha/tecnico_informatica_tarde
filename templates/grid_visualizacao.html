@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d1e3ff;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        button, .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active, .btn:active {
+            background-color: #00408d;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table-custom {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-custom th {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+        }
+
+        .table-custom td {
+            background-color: #ffecb5;
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-custom tr:nth-child(odd) td {
+            background-color: #f8f9fa;
+        }
+
+        .table-custom tr:hover td {
+            background-color: #ffddc1;
+        }
+
+        .table-custom th:first-child {
+            background-color: #ffffff;
+            color: #333333;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .table-custom td:first-child {
+            border-right: 1px solid #dee2e6;
+        }
+
+        .inicial-button {
+            position: absolute;
+            top: 175px;
+            left: 12px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            z-index: 1000;
+        }
+        
+        .inicial-button a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .inicial-button:hover {
+            background-color: #0056b3;
+        }
+
+        .search-filters {
+            margin-bottom: 20px;
+        }
+
+        .search-filters .form-control {
+            padding-right: 40px;
+            position: relative;
+        }
+
+        .search-filters .fa-search.buton {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        #pdfButton {
+            margin-left: 5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <br><br>
+    <h1>Chamados confirmados para serem executados</h1>
+    <form action="{{ url_for('grid_visualizacao') }}" method="post">
+        <button type="submit" class="btn" name="gerar_grid">Gerar Relatório</button>      
+        <button id="pdfButton" class="btn">Gerar PDF</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Voltar</a>
+    </form>
+    <br>
+</div>
+
+<div class="container text-center">
+    <div class="table-responsive">
+        <table class="table table-custom" id="table-to-export">
+            <!-- Cabeçalho -->
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Chamada</th>
+                    <th scope="col">Assunto</th>
+                    <th scope="col">Funcionário</th>
+                    <th scope="col">Prazo</th>
+                    <th scope="col">Setor</th>
+                    <th scope="col">Nome Solicitante</th>
+                    <th scope="col">Email Solicitante</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Unidade</th>
+                    <th scope="col">Informações Adicionais</th>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Local</th>
+                    <th scope="col">Status</th>                    
+                    <th scope="col">Prioridade</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+
+            <!-- Corpo da tabela -->
+            <tbody id="tableBody">
+                {% if resultado %}
+                    {% for solicitacao in resultado %}
+                    <tr>
+                        <th scope="row">
+                            <a href="{{ url_for('visualizacao', servicos_id_seq=solicitacao[0]) }}">{{ solicitacao[0] }}</a>
+                        </th>
+                        <td>{{ solicitacao[1] }}</td>
+                        <td>{{ solicitacao[2] }}</td>
+                        <td>{{ solicitacao[3] }}</td>
+                        <td>{{ solicitacao[4] }}</td>
+                        <td>{{ solicitacao[5] }}</td>
+                        <td>{{ solicitacao[6] }}</td>
+                        <td>{{ solicitacao[7] }}</td>
+                        <td>{{ solicitacao[8] }}</td>
+                        <td>{{ solicitacao[9] }}</td>
+                        <td>{{ solicitacao[10] }}</td>
+                        <td>{{ solicitacao[11] }}</td>
+                        <td>{{ solicitacao[12] }}</td>
+                        <td>{{ solicitacao[14] }}</td>
+                        <td>{{ solicitacao[13] }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="15">Nenhuma solicitação encontrada.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Modal para exibir detalhes do serviço -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel">Detalhes do Serviço</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="serviceDetails">
+                <!-- Detalhes do serviço serão carregados aqui -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="modalServico" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Detalhes do Serviço</h2>
+        <div id="modalBody">
+            <!-- Detalhes do serviço serão injetados aqui -->
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('pdfButton').addEventListener('click', function() {
+            var table = document.getElementById('table-to-export').cloneNode(true);
+            
+            // Remove the "Nenhuma solicitação encontrada" row if it exists
+            var rows = table.querySelectorAll('#tableBody tr');
+            rows.forEach(function(row) {
+                if (row.textContent.includes('Nenhuma solicitação encontrada')) {
+                    row.remove();
+                }
+            });
+
+            var opt = {
+                margin: [0.5, 0.5, 1, 1], // Top, Right, Bottom, Left margins in inches
+                filename: 'relatorio_solicitacoes.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: [570, 500], orientation: 'portrait' } // A4 size in mm
+            };
+
+            html2pdf().from(table).set(opt).save();
+        });
+    });
+</script>
+
+</body>
+</html>

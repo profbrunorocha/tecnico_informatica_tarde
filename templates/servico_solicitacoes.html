@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Solicita Senac</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+
+  <link href="../static/images/logo5.png" rel="icon" class="img-fluid">
+
+  <style>
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os inputs se movam para baixo se não houver espaço suficiente */
+  margin-bottom: 12px; /* Espaçamento entre linhas de inputs */
+}
+
+.form-row .form-group {
+  flex: 1; /* Cada input ocupa a mesma largura */
+  margin-right: 15px; /* Espaçamento entre inputs, exceto o último */
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0; /* Remove o espaçamento do último input na linha */
+}
+
+@media (max-width: 767px) {
+  .form-row .form-group {
+    margin-right: 0; /* Remove o espaçamento lateral em telas pequenas */
+    flex: 1 0 100%; /* Cada input ocupa a largura total em telas pequenas */
+  }
+}
+.btn-submit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.form-group label {
+  color: #007bff;
+}
+
+.form-group input[type="file"] {
+  background-color: #f0f0f0;
+}
+
+.form-control-file {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.form-select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button:active {
+        background-color: #00408d;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .button-container {
+  margin-top: -55px; /* Ajuste o valor para mover os botões mais para cima */
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Espaço entre os botões */
+}
+
+
+.form-header {
+  margin-top: 22px; /* Aumente esse valor para mover o título mais para baixo */
+  text-align: center; /* Mantém o título centralizado */
+}
+
+.form-header h2 {
+  margin-top: 0; /* Certifique-se de que não há margens adicionais no próprio título */
+}
+
+/* Adiciona um estilo ao botão de logout */
+.inicial-button {
+  position: absolute; /* Posiciona o botão de forma absoluta */
+  top: 170px; /* Distância do topo */
+  left: 1px; /* Distância da esquerda */
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #ffffff; /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Cantos arredondados */
+  padding: 5px 15px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  text-align: center; /* Alinhamento do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  display: inline-block; /* Faz o botão ficar no mesmo nível */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.inicial-button a {
+  color: #ffffff; /* Cor do texto do link dentro do botão */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.inicial-button:hover {
+  background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Fundo do formulário */
+.service_section {
+  background-color: #d1e3ff; /* Cor de fundo sólida */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Cantos arredondados (opcional) */
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Ligue : +55 (82) 2122-7858
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : solicitasenac@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom sede-header">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+
+            </a>
+
+            
+              <span class=""> </span>
+            </button>
+
+
+            <div class="header_bottom">
+              <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="index1.html">
+                    <span>
+                      <img src="../static/images/logo5.png" alt="Logo">
+                    </span>
+                  </a>
+                
+
+          <!--  
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">Página inicial <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cadastros.html"> Cadastros</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="relatorio.html">Relatórios</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Serviços
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="service.html">Serviços</a>
+                    <a class="dropdown-item" href="sede.html">Sede</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+-->
+
+
+
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+<!--Botão para voltar para a tela inicial-->
+  <div class="inicial-button">
+    <a href="/pagina_opcoes">
+     <i class="fa fa-sign-out"></i> Voltar
+    </a>
+   </div>
+
+
+
+
+
+
+  <!-- Formulário -->
+<section class="service_section layout_padding">
+  <center>
+    <div class="header_bottom">
+      <div class="container-fluid">
+        <div class="button-container">
+    <!--    <a href="cadastros.html"><button>Cadastros</button></a> -->
+          
+      <!--  <a href="service.html"><button>Serviços</button></a> -->
+        </div>
+      </div>
+    </div>
+  </center>
+<br><br>
+<div class="container form-container">
+  <div class="form-header">
+      <h2>Confirmação de Serviços</h2>
+  </div>
+  <form method="post">
+    {% for solicitacao in solicitacoes %}
+    <!-- Exibir o ID do serviço -->
+    <div class="form-group">
+        <h3>ID do Serviço: {{ solicitacao.servicos_id_seq }}</h3>
+    </div>
+    
+    <!-- Campo oculto para o ID da solicitação -->
+    <input type="hidden" name="solicitacao_ids" value="{{ solicitacao.servicos_id_seq }}">
+
+    <div class="form-group form-row">
+        <div class="col-md-6">
+            <label for="assunto">Assunto</label>
+            <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Digite o assunto" value="{{ solicitacao.assunto }}" required>
+        </div>
+        <div class="col-md-6">
+            <label for="funcionario">Funcionário</label>
+            <input type="text" class="form-control" id="funcionario" name="funcionario" value="{{ solicitacao.funcionario }}" required>
+        </div>
+    </div>
+
+    <div class="form-group form-row">
+        <div class="col-md-6">
+            <label for="setor">Setor</label>
+            <input type="text" class="form-control" id="setor" name="setor" value="{{ solicitacao.setor }}" readonly>
+        </div>
+    </div>
+
+    <div class="form-group form-row">
+        <div class="col-md-6">
+            <label for="nome">Nome do solicitante</label>
+            <input type="text" class="form-control" id="nome" name="nome_solicitante" value="{{ solicitacao.nome_solicitante }}" readonly>
+        </div>
+        <div class="col-md-6">
+            <label for="email">E-mail do solicitante</label>
+            <input type="email" class="form-control" id="email" name="email_solicitante" value="{{ solicitacao.email_solicitante }}" required>
+        </div>
+    </div>
+
+    <div class="form-group form-row">
+        <div class="col-md-6">
+            <label for="telefone">Telefone/WhatsApp do solicitante</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone" value="{{ solicitacao.telefone }}">
+        </div>
+        <div class="col-md-6">
+          <label for="unidade">Unidade</label>
+          <input type="unidade" class="form-control" id="unidade" placeholder="Digite sua unidade" value="{{ solicitacao.unidade }}">
+     </div>
+    </div>
+
+    <div class="form-group">
+        <label for="informacoes_adicionais">Observações</label>
+        <textarea class="form-control" id="informacoes_adicionais" name="informacoes_adicionais" rows="3" placeholder="Descreva o problema">{{ solicitacao.informacoes_adicionais }}</textarea>
+    </div>
+
+    <div class="form-group form-row">
+        <div class="col-md-6">
+            <label for="categoria">Categoria</label>
+            <select class="form-select" id="categoria" name="categoria" required>
+                <option value="" disabled {{ 'selected' if not solicitacao.categoria }}>Não definido</option>
+                <option value="Categoria 1" {{ 'selected' if solicitacao.categoria == 'Categoria 1' }}>Categoria 1</option>
+                <option value="Categoria 2" {{ 'selected' if solicitacao.categoria == 'Categoria 2' }}>Categoria 2</option>
+                <option value="Categoria 3" {{ 'selected' if solicitacao.categoria == 'Categoria 3' }}>Categoria 3</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="prioridade">Prioridade</label>
+            <select class="form-select" id="prioridade" name="prioridade" required>
+                <option value="" disabled {{ 'selected' if not solicitacao.prioridade }}>Não definido</option>
+                <option value="Prioridade 1" {{ 'selected' if solicitacao.prioridade == 'Prioridade 1' }}>Prioridade 1</option>
+                <option value="Prioridade 2" {{ 'selected' if solicitacao.prioridade == 'Prioridade 2' }}>Prioridade 2</option>
+                <option value="Prioridade 3" {{ 'selected' if solicitacao.prioridade == 'Prioridade 3' }}>Prioridade 3</option>
+            </select>
+        </div>
+    </div>
+
+    {% if solicitacao.imagem_url %}
+    <h1>Imagem do Serviço</h1>
+    <img src="{{ solicitacao.imagem_url }}" alt="Imagem do Serviço">
+    {% else %}
+    <p>Imagem não disponível.</p>
+    {% endif %}
+
+    <div class="form-button-container">
+        <!-- Botões para enviar o formulário -->
+        <button type="submit" class="btn-submit" name="acao" value="confirmar">Confirmar</button>
+        <button type="submit" class="btn-submit" name="acao" value="nao_confirmar">Não Confirmar</button>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="mt-3">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
+</form>
+
+
+
+</div>
+</section>
+
+<!-- info section -->
+<section class="info_section">
+  <div class="container">
+    <h4>Entre em contato</h4>
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="info_items">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="">
+                <div class="item">
+                  <div class="img-box">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  </div>
+                  <p>R. Pedro Paulino, 77 - Poço, Maceió - AL, 57025-340</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="">
+                <div class="item">
+                  <div class="img-box">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  </div>
+                  <p>+55 (82) 2122-7858</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="">
+                <div class="item">
+                  <div class="img-box">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </div>
+                  <p>solicitasenac@gmail.com</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end info section -->
+
+<!-- footer section -->
+<section class="container-fluid footer_section">
+  <p>&copy; Todos os direitos reservados</p>
+</section>
+<!-- footer section -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- bootstrap js -->
+<script src="../static/js/bootstrap.js"></script>
+<!-- owl carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- custom js -->
+<script src="../static/js/custom.js"></script>
+<script>
+  document.getElementById('telefone').addEventListener('input', function (e) {
+    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+    e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+  });
+</script>
+
+</body>
+
+</html>
