@@ -4,7 +4,7 @@ Solicita Serviços Senac - Uma ferramenta para gerenciar a solicitação de serv
 ![Static Badge](https://img.shields.io/badge/SSS-blue)
 
 <h4 align="center"> 
-	👾  Sistema ✅ concluído com sucesso 👾
+	  Sistema ✅ concluído com sucesso 
 </h4>
 ### Features
 
